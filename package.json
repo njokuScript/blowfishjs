@@ -2,7 +2,10 @@
   "name": "blowfishjs",
   "version": "1.0.0",
   "description": "A Typescript/Javascript library for interacting with the Blowfish APIs",
-  "main": "index.js",
+  "main": "./src/index.ts",
+  "type": "module",
+  "module": "./dist/index.es.js",
+  "browser": "./dist/index.bundle.js",
   "scripts": {
     "test": "jest --coverage ./test/",
     "prepublishOnly": "npm ci && npm run build",
@@ -34,6 +37,7 @@
   },
   "homepage": "https://github.com/njokuScript/blowfishjs#readme",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.0.0",
     "@solana/web3.js": "^1.70.3",
     "@types/jest": "^29.2.4",
     "axios": "^1.2.1",

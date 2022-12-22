@@ -1,7 +1,7 @@
 import typescript from 'rollup-plugin-typescript'
 import pluginCommonjs from '@rollup/plugin-commonjs'
 import replace from 'rollup-plugin-replace'
-import pkg from './package.json'
+import pkg from './package.json' assert { type: 'json' }
 
 const banner = `
 /*
@@ -19,9 +19,7 @@ LICENSE file in the root directory of this source tree.
 
 const external = [...Object.keys(pkg.dependencies || {})]
 const plugins = [
-  typescript({
-    typescript: require('typescript'),
-  }),
+  typescript(),
   pluginCommonjs({
     extensions: ['.js', '.ts'],
   }),
@@ -29,7 +27,7 @@ const plugins = [
     __REPLACE_VERSION__: pkg.version,
   }),
 ]
-
+console.log(pkg.main, 'file dir')
 export default [
   // Create CommonJS and ES Module for Node and modern browsers
   {
