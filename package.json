@@ -1,0 +1,54 @@
+{
+  "name": "blowfishjs",
+  "version": "1.0.0",
+  "description": "A Typescript/Javascript library for interacting with the Blowfish APIs",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage ./test/",
+    "prepublishOnly": "npm ci && npm run build",
+    "dev": "concurrently -c yellow,blue -n RLP,SRV \"npm:build:watch\" \"npm:serve\"",
+    "build": "rollup -c",
+    "build:watch": "rollup -cw",
+    "test:dist": "npm run build && jest --coverage ./test-dist/",
+    "test:watch": "jest --coverage --watch",
+    "serve": "npx light-server --serve . -w \"index.html\" -w \"app.js\" -w \"dist/index.es.js\" -w \"dist/index.bundle.js\"",
+    "trypublish": "npm publish || true",
+    "postversion": "git push && git push --tags && npm publish && npm run open-releases",
+    "lint": "npx prettier '**/*.{json,md,ts}' --write"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/njokuScript/blowfishjs.git"
+  },
+  "keywords": [
+    "Solana",
+    "Web3",
+    "Security",
+    "Blowfish",
+    "SDK"
+  ],
+  "author": "Njoku Emmanuel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/njokuScript/blowfishjs/issues"
+  },
+  "homepage": "https://github.com/njokuScript/blowfishjs#readme",
+  "devDependencies": {
+    "@solana/web3.js": "^1.70.3",
+    "@types/jest": "^29.2.4",
+    "axios": "^1.2.1",
+    "dotenv": "^16.0.3",
+    "ethers": "^5.7.2",
+    "jest": "^29.3.1",
+    "light-server": "^2.9.1",
+    "rollup": "^3.8.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-typescript": "^1.0.1",
+    "ts-jest": "^29.0.3",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.4"
+  }
+}
