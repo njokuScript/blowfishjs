@@ -1,6 +1,5 @@
 <p>
-<img title="Blowfisdh" src= "https://res.cloudinary.com/njokuscript/image/upload/v1671695941/blowfish_x9tug4.svg
-" width="300px"/>
+<img title="Blowfish" src= "https://res.cloudinary.com/njokuscript/image/upload/v1671695941/blowfish_x9tug4.svg" width="300px"/>
 </p>
 
 
