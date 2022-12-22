@@ -1,0 +1,54 @@
+#Included:
+#                 1. Install and Download Dependencies
+#                 2. Build project
+#                 3. Run all tests
+#                 4. slither integration ( static analysis)
+
+name: ci-checks
+
+on: [push]
+
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  Build-Project:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up environment
+        uses: ./.github/actions/setup
+      - name: Build Project
+        run: yarn build
+        id: build-successful
+
+  lint:
+    name: Lint Project
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      # - name: Set up environment
+      # uses: ./.github/actions/setup
+      - name: Lint Project
+        run: yarn lint
+        continue-on-error: true
+
+  tests:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up environment
+        uses: ./.github/actions/setup
+      - name: Run Test
+        run: yarn test
+
+  # coverage: (not being checked)
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Set up environment
+  #       uses: ./.github/actions/setup
+  #     - name: Run Coverage Checks
+  #       run: yarn coverage
