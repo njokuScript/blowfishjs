@@ -25,7 +25,7 @@ export default async function scanTransaction(args: ScanTransactionPayload, blow
         },
       }
     )
-    return response?.data
+    console.log(response)
   } catch (error) {
     return error
   }
