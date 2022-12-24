@@ -2,6 +2,7 @@ import typescript from 'rollup-plugin-typescript'
 import pluginCommonjs from '@rollup/plugin-commonjs'
 import replace from 'rollup-plugin-replace'
 import pkg from './package.json' assert { type: 'json' }
+import terser from '@rollup/plugin-terser'
 
 const banner = `
 /*
@@ -26,8 +27,8 @@ const plugins = [
   replace({
     __REPLACE_VERSION__: pkg.version,
   }),
+  // terser(),
 ]
-console.log(pkg.main, 'file dir')
 export default [
   // Create CommonJS and ES Module for Node and modern browsers
   {
@@ -41,7 +42,7 @@ export default [
       },
       {
         file: pkg.module,
-        format: 'es', // the preferred format
+        format: 'es', // ES Module format
         banner,
       },
       {
