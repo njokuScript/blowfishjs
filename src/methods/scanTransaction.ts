@@ -1,13 +1,23 @@
-import { ChainID, NetworkType, ScanTransactionPayload } from './utils/types'
+import { Chain, ChainID, TxObject } from '../utils/types'
 import { BlowfishApi, setApiKey } from '../utils/api'
+import { getNetworkNameByChainID } from '../utils/helpers'
 import { API_URL } from '../utils/constants'
 
-export default async function scanTransaction(args: ScanTransactionPayload, blowfishApiKey: string, language?: string) {
-  let networkName
-
-  const { chain, chainId, transactions, userAccount, metadata } = args
+type ScanTransactionParams = {
+  chain: Chain
+  chainId: ChainID
+  transactions: string[] | TxObject
+  userAccount: string
+  language?: string
+  metadata: object | {}
+  blowfishApiKey: string
+}
+export default async function (args: ScanTransactionParams) {
+  const { blowfishApiKey, chain, chainId, transactions, userAccount, language, metadata } = args
 
   // TODO: 1. get network name from chainId
+  const networkName = getNetworkNameByChainID(chainId)
+
   try {
     await setApiKey(blowfishApiKey)
 

@@ -2,10 +2,10 @@ import { ScanTransactionPayload } from './utils/types'
 import scanTransction from './methods/scanTransaction'
 
 export class Blowfish {
-  BlowfishApiKey: string
+  blowfishApiKey: string
 
-  constructor(BlowfishApiKey: string) {
-    this.BlowfishApiKey = BlowfishApiKey
+  constructor(blowfishApiKey: string) {
+    this.blowfishApiKey = blowfishApiKey
   }
 
   /**
@@ -13,6 +13,6 @@ export class Blowfish {
    * @param {ScanTransactionPayload} args - The object containing the transaction payload
    */
   public async scanTransction(args: ScanTransactionPayload) {
-    return await scanTransction({ ...args, BlowfishApiKey: this.BlowfishApiKey })
+    return await scanTransction({ ...args, blowfishApiKey: this.blowfishApiKey })
   }
 }

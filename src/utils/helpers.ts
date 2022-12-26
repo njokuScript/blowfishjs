@@ -1,5 +1,5 @@
-import { ChainID } from './types'
-const getOrigin = (url?: string): string | undefined => {
+import { ChainID, NetworkTypes } from './types'
+export const getOrigin = (url?: string): string | undefined => {
   if (!url) {
     return undefined
   }
@@ -11,15 +11,17 @@ const getOrigin = (url?: string): string | undefined => {
   }
 }
 
-// export const getNetworkNameByChainID = (chainId: ChainID) => {
-//   switch (chainId) {
-//     case '101':
-//       return 'mainnet-beta'
-//     case '102':
-//       return 'testnet'
-//     case '103':
-//       return 'devnet'
-//     case '1':
-//       return 'ethereum'
-//   }
-// }
+export const getNetworkNameByChainID = (chainId: ChainID): string | undefined => {
+  switch (chainId) {
+    case 101:
+      return NetworkTypes.solana_mainnet
+    case 102:
+      return NetworkTypes.solana_testnet
+    case 103:
+      return NetworkTypes.solana_devnet
+    case 1 | 137:
+      return NetworkTypes.mainnet
+    case 5:
+      return NetworkTypes.goerli
+  }
+}

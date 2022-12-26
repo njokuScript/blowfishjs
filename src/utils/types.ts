@@ -106,19 +106,34 @@ export type ChainID = 101 | 102 | 103 | 1 | 137 | 5
 
 export type Chain = 'ethereum' | 'solana' | 'polygon'
 
-export type NetworkType = 'devnet' | 'testnet' | 'mainnet' | 'goerli'
+export enum NetworkTypes {
+  solana_devnet = 'devnet',
+  goerli = 'goerli',
+  solana_testnet = 'testnet',
+  mainnet = 'mainnet',
+  solana_mainnet = 'mainnet-beta',
+}
 
-export type ScanTransactionPayload = {
-  network: NetworkType
+export interface ScanTransactionPayload {
   chain: Chain
-  transaction: string[] | TxObject
+  chainId: ChainID
+  transactions: string[] | TxObject
   userAccount: string
+  language?: string
   metadata: object | {}
 }
 
-export type TxObject = {
+export interface TxObject {
   from: string
   to: string
   value: string
   data: string
 }
+
+export default {
+  solana_devnet: 'devnet',
+  goerli: 'goerli',
+  solana_testnet: 'testnet',
+  mainnet: 'mainnet',
+  solana_mainnet: 'mainnet-beta',
+} as const
