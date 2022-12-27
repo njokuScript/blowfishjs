@@ -27,7 +27,7 @@ const plugins = [
   replace({
     __REPLACE_VERSION__: pkg.version,
   }),
-  // terser(),
+  terser(),
 ]
 export default [
   // Create CommonJS and ES Module for Node and modern browsers
