@@ -109,7 +109,7 @@ export type Chain = 'ethereum' | 'solana' | 'polygon'
 export type NetworkType = 'devnet' | 'testnet' | 'mainnet' | 'goerli'
 
 export type ScanTransactionPayload = {
-  network: NetworkType
+  chainId: ChainID
   chain: Chain
   transactions: string[]
   userAccount: string

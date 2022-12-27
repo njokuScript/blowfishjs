@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "A Typescript/Javascript library for interacting with the Blowfish APIs",
   "main": "./dist/index.js",
-  "type": "module",
   "module": "./dist/index.es.js",
   "browser": "./dist/index.bundle.js",
   "scripts": {
@@ -36,11 +35,8 @@
     "url": "https://github.com/njokuScript/blowfishjs/issues"
   },
   "homepage": "https://github.com/njokuScript/blowfishjs#readme",
-  "peerDependencies": {
-    "@solana/web3.js": "*"
-  },
   "dependencies": {
-    "@solana/web3.js": "^1.70.3"
+    "axios": "^1.2.1"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^24.0.0",
