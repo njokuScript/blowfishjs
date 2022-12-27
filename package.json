@@ -52,7 +52,7 @@
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-replace": "^2.2.0",
-    "rollup-plugin-typescript": "^1.0.1",
+    "rollup-plugin-typescript2": "^0.34.1",
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",
     "tslib": "^2.4.1",

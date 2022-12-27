@@ -1,4 +1,4 @@
-import typescript from 'rollup-plugin-typescript'
+import typescript from 'rollup-plugin-typescript2'
 import pluginCommonjs from '@rollup/plugin-commonjs'
 import replace from 'rollup-plugin-replace'
 import pkg from './package.json' assert { type: 'json' }
@@ -27,7 +27,7 @@ const plugins = [
   replace({
     __REPLACE_VERSION__: pkg.version,
   }),
-  // terser(),
+  terser(),
 ]
 export default [
   // Create CommonJS and ES Module for Node and modern browsers
@@ -38,7 +38,7 @@ export default [
         file: pkg.main,
         format: 'cjs',
         banner,
-        exports: 'default',
+        exports: 'auto',
       },
       {
         file: pkg.module,
@@ -52,7 +52,7 @@ export default [
         banner,
       },
     ],
-    external,
+    external: ['axios'],
     plugins,
   },
 ]
