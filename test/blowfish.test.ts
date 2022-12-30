@@ -16,6 +16,6 @@ describe('Blowfish', () => {
     }
 
     const res = await blowfish.scanTransaction(tx_data)
-    console.log(res, 'result')
+    console.log(res)
   })
 })

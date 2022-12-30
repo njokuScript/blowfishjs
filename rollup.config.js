@@ -18,6 +18,10 @@ LICENSE file in the root directory of this source tree.
 @bannerend*/
 `
 
+if (!process.env.ROLLUP_WATCH) {
+  plugins.push(terser())
+}
+
 const external = [...Object.keys(pkg.dependencies || {})]
 const plugins = [
   typescript(),
@@ -27,7 +31,6 @@ const plugins = [
   replace({
     __REPLACE_VERSION__: pkg.version,
   }),
-  terser(),
 ]
 export default [
   // Create CommonJS and ES Module for Node and modern browsers

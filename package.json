@@ -5,6 +5,7 @@
   "main": "./dist/index.js",
   "module": "./dist/index.es.js",
   "browser": "./dist/index.bundle.js",
+  "type": "module",
   "scripts": {
     "test": "jest --coverage ./test/",
     "prepublishOnly": "npm ci && npm run build",
