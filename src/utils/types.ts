@@ -111,16 +111,16 @@ export enum NetworkTypes {
   goerli = 'goerli',
   solana_testnet = 'testnet',
   mainnet = 'mainnet',
-  solana_mainnet = 'mainnet-beta',
+  solana_mainnet = 'mainnet',
 }
 
 export interface ScanTransactionPayload {
-  chain: Chain
-  chainId: ChainID
+  chain: Chain | string
+  chainId: ChainID | number
   transactions: string[] | TxObject
   userAccount: string
   language?: string
-  metadata: object | {}
+  dappUrl: string
 }
 
 export interface TxObject {
@@ -135,5 +135,5 @@ export default {
   goerli: 'goerli',
   solana_testnet: 'testnet',
   mainnet: 'mainnet',
-  solana_mainnet: 'mainnet-beta',
+  solana_mainnet: 'mainnet',
 } as const

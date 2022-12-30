@@ -11,7 +11,7 @@ export const getOrigin = (url?: string): string | undefined => {
   }
 }
 
-export const getNetworkNameByChainID = (chainId: ChainID): string | undefined => {
+export const getNetworkByChainID = (chainId: ChainID | number): string | undefined => {
   switch (chainId) {
     case 101:
       return NetworkTypes.solana_mainnet
