@@ -17,10 +17,8 @@ LICENSE file in the root directory of this source tree.
 
 @bannerend*/
 `
-
-if (!process.env.ROLLUP_WATCH) {
-  plugins.push(terser())
-}
+const devMode = process.env.NODE_ENV === 'development'
+console.log(`${devMode ? 'development' : 'production'} mode bundle`)
 
 const external = [...Object.keys(pkg.dependencies || {})]
 const plugins = [
@@ -32,6 +30,10 @@ const plugins = [
     __REPLACE_VERSION__: pkg.version,
   }),
 ]
+
+if (process.env.NODE_ENV === 'production') {
+  plugins.push(terser())
+}
 export default [
   // Create CommonJS and ES Module for Node and modern browsers
   {

@@ -3,15 +3,20 @@
 </p>
 
 
-The Blowfish javascript library with [SolanaWeb3](https://github.com/solana-labs/solana-web3.js) under the hood.
+The Blowfish javascript library.
 
 
 ## Installation
 
-To get started, install the Blowfish JS package from npm alongside [SolanaWeb3](https://github.com/solana-labs/solana-web3.js).
+To get started, install the Blowfish JS package from npm.
 
 ```sh
-npm install blowfishjs @solana/web3.js
+npm install blowfishjs
+```
+For browsers, via jsDelivr CDN:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/blowfishjs@latest/dist/index.bundle.min.js"></script>
 ```
 
 ## Getting Started
@@ -19,12 +24,13 @@ npm install blowfishjs @solana/web3.js
 To create a new Blowfish instance, you have to pass in your blowfish API key in the constructor.
 
 ```js
-// in nodejs
-import { Blowfish } from 'blowfishjs'
-
-const Blowfish = require('blowfishjs');
-
+// in browser
 const blowfish = new Blowfish(BLOWFISF_API_KEY);
 
-
+// in nodejs
+const Blowfish = require('blowfishjs');
+const blowfish = new Blowfish(BLOWFISF_API_KEY);
 ```
+
+## Scanning a transaction
+
