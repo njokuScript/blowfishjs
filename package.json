@@ -1,6 +1,6 @@
 {
   "name": "@njoku/blowfishjs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Typescript/Javascript library for interacting with the Blowfish APIs",
   "main": "./dist/index.js",
   "module": "./dist/index.es.js",
@@ -17,6 +17,7 @@
     "serve": "npx light-server --serve . -w \"index.html\" -w \"app.js\" -w \"dist/index.es.js\" -w \"dist/index.bundle.js\"",
     "trypublish": "npm publish || true",
     "postversion": "git push && git push --tags && npm publish && npm run open-releases",
+    "open-releases": "open \"$(node -e 'console.log(`${require(\"./package.json\").repository}/releases`)')\"",
     "lint": "npx prettier '**/*.{json,md,ts}' --write"
   },
   "repository": {
