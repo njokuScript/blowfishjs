@@ -6,21 +6,8 @@ runs:
     - uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        cache: yarn
+        cache: npm
 
-    - name: Get yarn cache directory path
-      shell: bash
-      id: yarn-cache-dir-path
-      run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-
-    - name: Cache yarn dependencies
-      uses: actions/cache@v3
-      id: yarn-cache
-      with:
-        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-yarn-
     - name: Install dependencies
       shell: bash
-      run: yarn install --ignore-scripts
+      run: npm install --ignore-scripts

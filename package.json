@@ -1,5 +1,5 @@
 {
-  "name": "blowfishjs",
+  "name": "@njoku/blowfishjs",
   "version": "1.0.0",
   "description": "A Typescript/Javascript library for interacting with the Blowfish APIs",
   "main": "./dist/index.js",
