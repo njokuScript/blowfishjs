@@ -54,10 +54,9 @@ const evaluationResult = await blowfish.scanTransaction(params);
 | **Parameter** | **Type**        | **Description**                                                                                                                                                                |
 | ------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `chain`    | *string* | Blockchain to perform the transaction scanning on. See the list of supported blockchains here  |
-| `chainId`      | *number*  | Network identifier of the blockchain .                                                                                             |
-| `transactions`   | *array/object*       | For the Solana chain, transactions is an array of base58 or base64 encoded Solana transactions. For the Ethereum and Polygon chain, the transaction is an object containing the *from*, *to*, *value* and *data* properties.
-   |
-| `userAccount`        | *string*       | A hex-representation of the user account who is being asked to sign the supplied transaction addresses.                                                                         |
+| `chainId`      | *number*  | Network identifier of the blockchain .                                                                                      |
+| `transactions`   | *array/object*       | For the Solana chain, transactions is an array of base58 or base64 encoded Solana transactions. For the Ethereum and Polygon chain, the transaction is an object containing the *from*, *to*, *value* and *data* properties. |
+| `userAccount`        | *string*       | A hex-representation of the user account who is being asked to sign the supplied transaction addresses.      |
 | `dappUrl`       | *string* | DApp domain proposing these transactions |
 
 ## Supported Chains
