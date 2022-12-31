@@ -11,7 +11,7 @@ The Blowfish javascript library compatible with browsers and Node.js backends
 To get started, install the Blowfish JS package from npm.
 
 ```sh
-npm install blowfishjs
+npm install @njoku/blowfishjs
 ```
 For browsers, via jsDelivr CDN:
 
@@ -28,7 +28,7 @@ To create a new Blowfish instance, you have to pass in your blowfish API key in 
 const blowfish = new Blowfish(BLOWFISF_API_KEY);
 
 // in nodejs
-const Blowfish = require('blowfishjs');
+const Blowfish = require('@njoku/blowfishjs');
 const blowfish = new Blowfish(BLOWFISF_API_KEY);
 ```
 
