@@ -20,7 +20,7 @@ jobs:
       - name: Set up environment
         uses: ./.github/actions/setup
       - name: Build Project
-        run: yarn build
+        run: npm run build
         id: build-successful
 
   lint:
@@ -31,7 +31,7 @@ jobs:
       # - name: Set up environment
       # uses: ./.github/actions/setup
       - name: Lint Project
-        run: yarn lint
+        run: npm run lint
         continue-on-error: true
 
   tests:
@@ -42,7 +42,7 @@ jobs:
       - name: Set up environment
         uses: ./.github/actions/setup
       - name: Run Test
-        run: yarn test
+        run: npm run test
 
   # coverage: (not being checked)
   #   runs-on: ubuntu-latest
@@ -51,4 +51,4 @@ jobs:
   #     - name: Set up environment
   #       uses: ./.github/actions/setup
   #     - name: Run Coverage Checks
-  #       run: yarn coverage
+  #       run: npm run coverage
