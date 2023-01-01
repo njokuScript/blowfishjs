@@ -16,7 +16,7 @@ npm install @njoku/blowfishjs
 For browsers, via jsDelivr CDN:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/blowfishjs@latest/dist/index.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@njoku/blowfishjs@1.0.4/dist/index.bundle.min.js"></script>
 ```
 
 ## Getting Started
